@@ -36,6 +36,21 @@
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold" />
+    <Button
+        android:id="@+id/stopshare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size_50sp"
+        android:layout_marginRight="@dimen/size_50sp"
+        android:layout_marginBottom="@dimen/size_10sp"
+        android:background="@drawable/btn"
+        android:backgroundTint="@color/navi_blue"
+        android:text="Stop Sharing"
+        android:layout_marginVertical="@dimen/size_20sp"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        android:textSize="20dp"
+        android:textStyle="bold" />
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,6 +85,7 @@
         android:textSize="20dp"
         android:textStyle="bold" />
     <TextView
+        android:id="@+id/locationtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/size_15sp"

@@ -14,7 +14,6 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -48,10 +47,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class driver extends AppCompatActivity {
-Button share,send;
+Button share,send,stopshare;
 EditText msg;
-TextView loaction1;
+TextView loaction1,locaTitle;
 SharedPreferences sharedPreferences;
+Boolean stops=true;
 private static final String SHARED_PREF_NAME = "sgvu";
 private static final String KEY_USERID = "userid";
 private static final String KEY_TOKEN = "token";
@@ -62,17 +62,20 @@ RetrofitClient retrofitClient;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver);
         share=findViewById(R.id.share);
+        stopshare=findViewById(R.id.stopshare);
         send=findViewById(R.id.send);
         msg=findViewById(R.id.msg);
         loaction1=findViewById(R.id.locationView);
+        locaTitle=findViewById(R.id.locationtitle);
         retrofitClient=new RetrofitClient();
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(
                 driver.this
         );
+
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ActivityCompat.checkSelfPermission(driver.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                /*if (ActivityCompat.checkSelfPermission(driver.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
                         && ActivityCompat.checkSelfPermission(driver.this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                     getCurrentLocation();
                 }else
@@ -83,7 +86,22 @@ RetrofitClient retrofitClient;
                             ,100);
                 }
 
+*/
+                stops=true;
+                refresh(1000);
+                stopshare.setVisibility(View.VISIBLE);
+                share.setVisibility(View.GONE);
+                locaTitle.setText("Current Location");
+            }
 
+        });
+        stopshare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stops=false;
+                stopshare.setVisibility(View.GONE);
+                share.setVisibility(View.VISIBLE);
+                locaTitle.setText("Last Location");
             }
         });
     }
@@ -100,7 +118,8 @@ RetrofitClient retrofitClient;
         }
         // Toast.makeText(MainActivity.this,"refreshed",Toast.LENGTH_SHORT).show();
 
-        refresh(10000);
+        if(stops==true)
+        refresh(1000);
 
     }
 
@@ -109,10 +128,17 @@ RetrofitClient retrofitClient;
         final Runnable runnable=new Runnable() {
             @Override
             public void run() {
+                if(stops==true)
                 content();
+                else {
+                    handler.removeCallbacks(this::run);
+                    Log.d("bharat","stopped");
+                }
             }
         };
+        if(stops==true)
         handler.postDelayed(runnable,i);
+
     }
 
     @SuppressLint("MissingSuperCall")
@@ -190,27 +216,31 @@ RetrofitClient retrofitClient;
     }
 
     private void upload(String address) {
-        sharedPreferences= getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+   /*     sharedPreferences= getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         int userid=sharedPreferences.getInt(KEY_USERID,0);
         String token=sharedPreferences.getString(KEY_TOKEN,null);
         JsonObject auth=new JsonObject();
 
         if(userid != 0 || token!=null)
         {
-            auth.addProperty("id",userid);
-            auth.addProperty("token",token);
+            auth.addProperty("id","2");
+            auth.addProperty("token","7znjjx319q6wMGHh7VJe654jceLPEe");
         }
         else
         {
             Toast.makeText(getApplicationContext(), "Login Again", Toast.LENGTH_SHORT).show();
             Intent i=new Intent(getApplicationContext(), login.class);
             startActivity(i);
-        }
+        }*/
+        JsonObject auth=new JsonObject();
+        auth.addProperty("id","2");
+        auth.addProperty("token","7znjjx319q6wMGHh7VJe654jceLPEe");
         JsonObject locationdata=new JsonObject();
-        locationdata.addProperty("userid",userid);
+        locationdata.addProperty("userid","2");
         if(address!=null)
             locationdata.addProperty("location",address);
         locationdata.add("auth",auth);
+        Log.d("bharat",locationdata.toString());
         retrofitClient.getWebService().insertlocation(locationdata).enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
@@ -221,7 +251,7 @@ RetrofitClient retrofitClient;
                         if(Integer.parseInt(obj.get("code").toString())==200)
                         {
 
-                            Toast.makeText(getApplicationContext(),"Updated", Toast.LENGTH_SHORT).show();
+                            Log.d("bharat","updated");
 
                         }
                         else if(Integer.parseInt(obj.get("code").toString())==400) {
