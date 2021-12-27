@@ -3,6 +3,7 @@ package com.bharatapp.sgvuBus.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -26,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bharatapp.sgvuBus.R;
+import com.bharatapp.sgvuBus.forground.ExampleService;
 import com.bharatapp.sgvuBus.retrofit.RetrofitClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -104,6 +106,19 @@ RetrofitClient retrofitClient;
                 locaTitle.setText("Last Location");
             }
         });
+    }
+    public void startService(View v) {
+
+
+        Intent serviceIntent = new Intent(this, ExampleService.class);
+        serviceIntent.putExtra("inputExtra", input);
+
+        ContextCompat.startForegroundService(this, serviceIntent);
+    }
+
+    public void stopService(View v) {
+        Intent serviceIntent = new Intent(this, ExampleService.class);
+        stopService(serviceIntent);
     }
     private void content() {
         if (ActivityCompat.checkSelfPermission(driver.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
