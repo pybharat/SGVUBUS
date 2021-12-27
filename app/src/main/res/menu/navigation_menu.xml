@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Important Updates"
+        android:id="@+id/up"
+        android:icon="@drawable/updates"
+        android:iconTint="@color/navi_blue"/>
+    <item android:title="Important Links"
+        android:id="@+id/links"
+        android:icon="@drawable/worldwide"
+        android:iconTint="@color/navi_blue"/>
+    <item
+        android:id="@+id/admin"
+        android:title="Admin Panel"
+        android:icon="@drawable/admin"
+        android:iconTint="@color/navi_blue"/>
+    <item
+        android:id="@+id/logout"
+        android:title="Log Out"
+        android:icon="@drawable/logout"
+        android:iconTint="@color/navi_blue"/>
+    <item
+        android:id="@+id/shareapp"
+        android:title="Share App"
+        android:icon="@drawable/ic_baseline_share_24"
+        android:iconTint="@color/navi_blue"/>
+</menu>

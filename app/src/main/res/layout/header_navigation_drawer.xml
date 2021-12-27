@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:id="@id/navigation_header_container"
+
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_200sp"
+    android:background="@color/navi_blue"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/size_50sp"
+        android:layout_marginTop="@dimen/size_50sp"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/size_80sp"
+            android:layout_height="@dimen/size_80sp"
+
+            android:layout_gravity="center_vertical"
+            app:cardCornerRadius="@dimen/size_250sp"
+            android:elevation="@dimen/size_10sp"
+            >
+
+            <ImageView
+                android:id="@+id/aq"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/gyanviharlogo"/>
+
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/size_5sp"
+            android:text="Hello! User"
+            android:textSize="@dimen/size_25sp"
+            android:layout_gravity="center_vertical"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/size_10sp"
+            android:textColor="@color/white"/>
+</LinearLayout>
+</LinearLayout>

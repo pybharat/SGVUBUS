@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.login">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:elevation="@dimen/size_20sp"
+        app:cardCornerRadius="@dimen/size_30sp"
+        android:layout_marginLeft="@dimen/size_50sp"
+        android:layout_marginRight="@dimen/size_50sp"
+        android:layout_marginTop="@dimen/size_20sp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="8dp"
+                android:layout_marginLeft="@dimen/size_30sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/gyanviharlogo" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SGVU"
+                android:textColor="@color/navi_blue"
+                android:textSize="40dp"
+                android:layout_marginLeft="@dimen/size_10sp"
+                android:layout_marginBottom="@dimen/size_5sp"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/size_10sp"
+            android:layout_marginRight="@dimen/size_10sp"
+            android:layout_below="@+id/card1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_10sp"
+                android:text="Login"
+                android:textColor="@color/navi_blue"
+                android:textSize="@dimen/size_30sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/size_10sp"/>
+
+            <FrameLayout
+                android:id="@+id/login1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_10sp"
+                android:layout_marginRight="@dimen/size_10sp"
+                />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/mobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Login by OTP"
+                    android:textSize="@dimen/size_18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/navi_blue"
+                    android:layout_marginBottom="@dimen/size_5sp"
+                    android:visibility="gone"
+                    android:layout_marginLeft="@dimen/size_30sp"/>
+
+
+</LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+</RelativeLayout>

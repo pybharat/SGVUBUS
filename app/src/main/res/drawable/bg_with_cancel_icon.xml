@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:gravity="center" android:id="@+id/cancel_iv" android:height="@dimen/size_40sp" android:width="@dimen/size_40sp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" />
+            <corners android:topRightRadius="@dimen/size_6sp" android:bottomRightRadius="@dimen/size_6sp" />
+            <padding android:left="@dimen/size_10sp" android:top="@dimen/size_10sp" android:right="@dimen/size_10sp" android:bottom="@dimen/size_10sp" />
+        </shape>
+    </item>
+    <item android:gravity="center" android:height="@dimen/size_15sp" android:width="@dimen/size_15sp" android:drawable="@drawable/cancel_icon" />
+</layer-list>

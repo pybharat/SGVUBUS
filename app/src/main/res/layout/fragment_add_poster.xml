@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.add_poster">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/size_10sp"
+                app:cardCornerRadius="@dimen/size_30sp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/size_10sp"
+                android:layout_marginRight="@dimen/size_10sp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:hint="Notice Title"
+                        android:layout_marginTop="@dimen/size_12sp"
+                        android:layout_marginLeft="@dimen/size_5sp"
+                        android:layout_marginRight="@dimen/size_5sp"
+                        android:layout_marginBottom="@dimen/size_7sp"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginTop="@dimen/size_7sp"
+                        android:layout_marginLeft="@dimen/size_5sp"
+                        android:layout_marginRight="@dimen/size_5sp"
+                        android:layout_marginBottom="@dimen/size_7sp"
+                        android:hint="Full Description"
+
+                        >
+
+                        <EditText
+                            android:id="@+id/f_des"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            android:gravity="center_vertical"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageButton
+                            android:id="@+id/upload_img"
+                            android:layout_width="@dimen/size_100sp"
+                            android:layout_height="@dimen/size_100sp"
+                            android:layout_marginLeft="@dimen/size_50sp"
+                            android:layout_gravity="left"
+                            android:src="@drawable/upload_image"
+                            android:scaleType="centerCrop"/>
+                        <Button
+                            android:id="@+id/uploadimg"
+                            android:layout_width="@dimen/size_100sp"
+                            android:layout_height="@dimen/size_60sp"
+                            android:layout_gravity="right|center_vertical"
+                            android:text="Upload"
+                            android:visibility="invisible"
+                            android:layout_marginLeft="@dimen/size_20sp"
+                            />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/add_notice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/size_50sp"
+                        android:layout_marginTop="@dimen/size_10sp"
+                        android:layout_marginRight="@dimen/size_50sp"
+                        android:layout_marginBottom="@dimen/size_10sp"
+                        android:background="@drawable/btn"
+                        android:backgroundTint="@color/navi_blue"
+                        android:text="Add Notice"
+                        android:layout_marginVertical="@dimen/size_20sp"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </ScrollView>
+
+
+
+</FrameLayout>

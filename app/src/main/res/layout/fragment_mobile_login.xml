@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.emailLogin">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/size_10sp"
+        app:cardCornerRadius="@dimen/size_30sp"
+        android:layout_marginLeft="@dimen/size_10sp"
+        android:layout_marginRight="@dimen/size_10sp"
+        android:layout_marginBottom="@dimen/size_10sp"
+        android:layout_marginTop="@dimen/size_10sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginTop="@dimen/size_12sp"
+                android:layout_marginLeft="@dimen/size_5sp"
+                android:layout_marginRight="@dimen/size_5sp"
+                android:layout_marginBottom="@dimen/size_10sp"
+                android:hint="E-Mail/Mobile No."
+
+                >
+
+                <EditText
+                    android:id="@+id/emailaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:gravity="center_vertical"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/login2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_50sp"
+                android:layout_marginTop="@dimen/size_10sp"
+                android:layout_marginRight="@dimen/size_50sp"
+                android:layout_marginBottom="@dimen/size_10sp"
+                android:background="@drawable/btn"
+                android:backgroundTint="@color/navi_blue"
+                android:text="Send OTP"
+                android:shadowDy="10"
+                android:shadowDx="10"
+                android:shadowRadius="15"
+                android:shadowColor="@color/black"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

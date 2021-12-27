@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="@dimen/size_5sp"
+    android:layout_marginTop="@dimen/size_10sp"
+    android:elevation="@dimen/size_17sp"
+
+    app:cardCornerRadius="@dimen/size_5sp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/size_10sp"
+
+        android:layout_marginLeft="@dimen/size_10sp"
+        android:layout_marginRight="@dimen/size_8sp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/notice_til"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/black"
+            android:text="notification title"
+            android:justificationMode="inter_word"
+            android:textColor="@color/design_dark_default_color_on_primary"
+            android:textSize="@dimen/size_12sp" />
+
+        <TextView
+            android:id="@+id/short_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/medium"
+            android:layout_marginTop="@dimen/size_2sp"
+            android:text="short_des"
+            android:justificationMode="inter_word"
+            android:textColor="@color/material_grey_600"
+            android:textSize="@dimen/size_8sp" />
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="02-Sep"
+            android:textSize="@dimen/size_8sp"
+            android:gravity="right"
+            android:textColor="@color/material_grey_800"/>
+            </LinearLayout>
+</androidx.cardview.widget.CardView>
+    </LinearLayout>
+</RelativeLayout>

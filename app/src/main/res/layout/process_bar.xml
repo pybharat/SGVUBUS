@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/size_80sp"
+    android:layout_height="@dimen/size_80sp"
+    android:background="@drawable/process_cust"
+    android:gravity="center">
+<LinearLayout
+    android:layout_width="@dimen/size_80sp"
+    android:layout_height="@dimen/size_80sp"
+    android:gravity="center"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/pro"
+        android:layout_width="@dimen/size_50sp"
+        android:layout_height="@dimen/size_50sp"
+        android:foregroundGravity="center"
+        android:src="@drawable/gyanviharnewlogo" />
+
+    <ProgressBar
+        android:layout_marginTop="@dimen/size_5sp"
+        android:layout_width="@dimen/size_30sp"
+        android:layout_height="@dimen/size_30sp"/>
+</LinearLayout>
+</RelativeLayout>

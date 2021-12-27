@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.update_profile">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <include layout="@layout/second_toolbar"/>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_30sp"
+            android:elevation="@dimen/size_10sp"
+            app:cardCornerRadius="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/size_10sp"
+            android:layout_marginRight="@dimen/size_10sp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:hint="Your Name"
+                    android:layout_marginTop="@dimen/size_12sp"
+                    android:layout_marginLeft="@dimen/size_5sp"
+                    android:layout_marginRight="@dimen/size_5sp"
+                    android:layout_marginBottom="@dimen/size_7sp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:hint="Contact No"
+                    android:layout_marginTop="@dimen/size_7sp"
+                    android:layout_marginLeft="@dimen/size_5sp"
+                    android:layout_marginRight="@dimen/size_5sp"
+                    android:layout_marginBottom="@dimen/size_7sp"
+                    >
+
+                    <EditText
+                        android:id="@+id/contact1"
+                        android:layout_width="match_parent"
+                        android:inputType="textMultiLine"
+                        android:layout_height="wrap_content"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+                <Button
+                    android:id="@+id/verify_no"
+                    android:layout_width="match_parent"
+                    android:visibility="invisible"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_80sp"
+                    android:layout_marginTop="@dimen/size_10sp"
+                    android:layout_marginRight="@dimen/size_80sp"
+                    android:layout_marginBottom="@dimen/size_10sp"
+                    android:background="@drawable/btn"
+                    android:backgroundTint="@color/navi_blue"
+                    android:text="Verify Contact"
+                    android:layout_marginVertical="@dimen/size_20sp"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageButton
+                        android:id="@+id/upload_img"
+                        android:layout_width="@dimen/size_100sp"
+                        android:layout_height="@dimen/size_100sp"
+                        android:layout_marginLeft="@dimen/size_50sp"
+                        android:layout_gravity="left"
+                        android:src="@drawable/upload_image"
+                        android:scaleType="centerCrop"/>
+                    <Button
+                        android:id="@+id/uploadimg"
+                        android:layout_width="@dimen/size_150sp"
+                        android:layout_height="@dimen/size_60sp"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="Upload"
+                        android:visibility="invisible"
+                        android:layout_marginLeft="@dimen/size_20sp"
+                        />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="upload your image if any"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/size_20sp"
+                    />
+                <Button
+                    android:id="@+id/update1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_50sp"
+                    android:layout_marginTop="@dimen/size_10sp"
+                    android:layout_marginRight="@dimen/size_50sp"
+                    android:layout_marginBottom="@dimen/size_10sp"
+                    android:background="@drawable/btn"
+                    android:backgroundTint="@color/navi_blue"
+                    android:text="update profile"
+                    android:layout_marginVertical="@dimen/size_20sp"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</RelativeLayout>

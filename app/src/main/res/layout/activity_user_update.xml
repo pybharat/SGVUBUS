@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.user_update">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/second_toolbar" />
+
+        </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_50sp"
+            android:layout_marginTop="@dimen/size_30sp"
+            android:layout_marginLeft="@dimen/size_10sp"
+            android:layout_marginRight="@dimen/size_10sp"
+            app:cardCornerRadius="@dimen/size_15sp"
+            android:elevation="@dimen/size_30sp"
+            >
+            <TextView
+                android:id="@+id/heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="UPDATE PROFILE"
+                android:shadowDy="5"
+                android:shadowDx="5"
+                android:shadowRadius="5"
+                android:shadowColor="@color/black"
+                android:textSize="@dimen/size_30sp"
+                android:textStyle="bold"
+                android:textColor="@color/navi_blue"
+                android:fontFamily="@font/black"/>
+        </androidx.cardview.widget.CardView>
+        <FrameLayout
+            android:id="@+id/add"
+            android:layout_margin="@dimen/size_10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+</RelativeLayout>
