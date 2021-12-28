@@ -74,6 +74,9 @@ RetrofitClient retrofitClient;
                 driver.this
         );
 
+        View rootView = getWindow().getDecorView().getRootView();
+
+
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,7 +91,7 @@ RetrofitClient retrofitClient;
                             ,100);
                 }
 
-*/
+*/              startService(rootView);
                 stops=true;
                 refresh(1000);
                 stopshare.setVisibility(View.VISIBLE);
@@ -107,12 +110,9 @@ RetrofitClient retrofitClient;
             }
         });
     }
+
     public void startService(View v) {
-
-
         Intent serviceIntent = new Intent(this, ExampleService.class);
-        serviceIntent.putExtra("inputExtra", input);
-
         ContextCompat.startForegroundService(this, serviceIntent);
     }
 

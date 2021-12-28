@@ -27,13 +27,9 @@ public class ExampleService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         RemoteViews contentView = new RemoteViews(getPackageName(), R.layout.notificationlayout);
-        contentView.setImageViewResource(R.id.image, R.mipmap.ic_launcher);
+        contentView.setImageViewResource(R.id.image, R.drawable.gyanviharlogo);
         contentView.setTextViewText(R.id.title, "SGVU BUS Tract");
         contentView.setTextViewText(R.id.text, "This is a custom layout");
-
-
-        String input = intent.getStringExtra("inputExtra");
-
         Intent notificationIntent = new Intent(this, driver.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,
                 0, notificationIntent, 0);
@@ -41,7 +37,7 @@ public class ExampleService extends Service {
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
                 //.setContentTitle("SGVU BUS Tract")
               //  .setContentText(input)
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setSmallIcon(R.drawable.gyanviharlogo)
                 .setContent(contentView)
                 .setContentIntent(pendingIntent)
                 .build();
